@@ -1,5 +1,12 @@
 # simple-crud-clint
 # <a href="https://github.com/NFRIDOY/simple-crud-server.git">simple-crud-server</a>
+
+# Fetures
+- CRUD : Create Read Update Delete
+- Create Using POST methods
+- Read Using GET methods
+- Update Using PUT methods
+- Delete Using DELETE methods
 ### …or create a new repository on the command line
 ~~~
 echo "# simple-crud-clint" >> README.md
