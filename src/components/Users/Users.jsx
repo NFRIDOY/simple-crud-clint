@@ -1,12 +1,17 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom'
 
 export default function Users() {
 
     const loadedUsers = useLoaderData();
     const [users, setUsers] = useState(loadedUsers)
-
+    
     console.log(users)
+    // useEffect(()=>{
+    //     fetch("http://localhost:5000/users")
+    //     .then(res => res.json())
+    //     .then(data=> setUsers(data))
+    // },[users])
 
     const handleDelete = (_id) => {
         console.log('deleting', _id)
