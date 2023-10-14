@@ -28,7 +28,15 @@ export default function UpdateUser() {
             body: JSON.stringify(updatedUser)
         })
         .then(res => res.json())
-        .then(data=> console.log(data))
+        .then(data=> {
+            if(data.modifiedCount>0) {
+                alert('updated Successfully', _id,)
+            }
+            else {
+                alert('failed to update', _id,)
+            }
+            console.log(data)
+        })
     }
 
     return (
