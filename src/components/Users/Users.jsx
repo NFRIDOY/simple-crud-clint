@@ -67,23 +67,58 @@ export default function Users() {
             <p>
                 Users: {users.length}
             </p>
-            <div className='w-1/2 mx-auto'>
+            <div className=' mx-auto'>
+                <div className="overflow-x-auto" >
+                    <table className="table" >
+                        {/* head */}
+                        <thead>
+                            <tr>
+                                <th className='text-center'>User MongoDB ID</th>
+                                <th className='text-center'>Name</th>
+                                <th className='text-center'>Job</th>
+                                <th className='col-span-2 text-center'>Options</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                users.map((user) => (
+                                    <tr className="bg-base-200" key={user._id}>
+                                        <th>{user._id}</th>
+                                        <td>{user.name}</td>
+                                        <td>{user.email}</td>
+                                        <td><Link to={`/user/${user._id}`} className='btn btn-success' onClick={() => handleUpdate(user._id)}>Update</Link></td>
+                                        <td><button className='btn btn-error' onClick={() => handleDelete(user._id)}>X</button></td>
+                                    </tr>
+
+
+
+                                ))
+                            }
+                        </tbody>
+                    </table>
+                </div>
+
+                {/* 
+                <div>
                 {
                     users.map((user) => (
                         <p key={user._id} className='flex flex-col gap-5 border-2 m-6 p-6'>
-                            <div className='text-left'> 
-                                <p>userID: {user._id}</p>
-                                <h3>Name: {user.name}</h3>
-                                <p>Email: {user.email}</p>
-                            </div>
-                            <div className='flex justify-evenly'>
-                                <Link to={`/user/${user._id}`} className='btn btn-success' onClick={() => handleUpdate(user._id)}>Update</Link>
-                                <button className='btn btn-error' onClick={() => handleDelete(user._id)}>X</button>
-                            </div>
+                        <div className='text-left'>
+                        <p>userID: {user._id}</p>
+                        <h3>Name: {user.name}</h3>
+                        <p>Email: {user.email}</p>
+                        </div>
+                        <div className='flex justify-evenly'>
+                        <Link to={`/user/${user._id}`} className='btn btn-success' onClick={() => handleUpdate(user._id)}>Update</Link>
+                        <button className='btn btn-error' onClick={() => handleDelete(user._id)}>X</button>
+                        </div>
                         </p>
-                    ))}
+                        ))
+                    } 
+                    </div>
+                    */}
             </div>
 
-        </div>
+        </div >
     )
 }
