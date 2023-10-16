@@ -1,12 +1,22 @@
 # simple-crud-clint
 # <a href="https://github.com/NFRIDOY/simple-crud-server.git">simple-crud-server</a>
+# <a href="https://github.com/NFRIDOY/simple-crud-firebase.config.js.git">simple-crud-firebase.config.js Private Please Download it Before User</a>
 
 # Fetures
 - CRUD : Create Read Update Delete
 - Create Using POST methods
 - Read Using GET methods
-- Update Using PUT methods
+- Update Using PUT / PATCH methods
 - Delete Using DELETE methods
+
+# Before Start
+
+- ```npm install firebase```
+- Setup Firebase in this location ```src/firebase/firebase.config.js```
+- <a href="https://github.com/NFRIDOY/simple-crud-firebase.config.js.git">Private Please Download it or Copy Before Use : simple-crud-firebase.config.js </a>
+- Or Make Your Own firebase.config.js shown before
+
+# GitHub
 ### …or create a new repository on the command line
 ~~~
 echo "# simple-crud-clint" >> README.md
