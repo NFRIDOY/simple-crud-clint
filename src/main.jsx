@@ -12,12 +12,19 @@ import {
 } from "react-router-dom";
 import Users from './components/Users/Users.jsx';
 import UpdateUser from './components/UpdateUser/UpdateUser.jsx';
+import Signup from './components/Signup/Signup.jsx';
+import SignIn from './components/SignIn/SignIn.jsx';
+import UserEntry from './components/UserEntry/UserEntry.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
     children: [
+      {
+        path: "/",
+        element: <UserEntry />,
+      },
       {
         path: "/users",
         element: <Users></Users>,
@@ -26,7 +33,14 @@ const router = createBrowserRouter([
       {
         path: "/user/:id",
         element: <UpdateUser></UpdateUser>,
-        loader: ({ params }) => fetch(`http://localhost:5000/user/${params.id}`)
+      },
+      {
+        path: "/signup",
+        element: <Signup></Signup>,
+      },
+      {
+        path: "/signin",
+        element: <SignIn></SignIn>,
       },
     ]
   },
