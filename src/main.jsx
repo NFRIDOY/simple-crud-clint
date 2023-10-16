@@ -17,17 +17,20 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
+    children: [
+      {
+        path: "/users",
+        element: <Users></Users>,
+        loader: () => fetch('http://localhost:5000/users')
+      },
+      {
+        path: "/user/:id",
+        element: <UpdateUser></UpdateUser>,
+        loader: ({ params }) => fetch(`http://localhost:5000/user/${params.id}`)
+      },
+    ]
   },
-  {
-    path: "/users",
-    element: <Users></Users>,
-    loader: () => fetch('http://localhost:5000/users')
-  },
-  {
-    path: "/user/:id",
-    element: <UpdateUser></UpdateUser>,
-    loader: ({params}) => fetch(`http://localhost:5000/user/${params.id}`)
-  },
+
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
